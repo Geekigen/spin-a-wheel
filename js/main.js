@@ -60,11 +60,12 @@ class playGame extends Phaser.Scene {
     }
 
     // method to be executed when the scene preloads
-    preload() { // loading assets
-
-        this.load.image("wheel", window.location.href + "images/wheel.png");
-        this.load.image("pin", window.location.href + "images/pin.png");
+    preload() {
+        // Load images from the "images" folder
+        this.load.image("wheel", "images/wheel.png");
+        this.load.image("pin", "images/pin.png");
     }
+    
 
     // method to be executed once the scene has been created
     create() {
@@ -138,7 +139,7 @@ class playGame extends Phaser.Scene {
                     this.prizeText.setText(gameOptions.slicePrizes[prize]);
 
                     // player can spin again
-                    this.canSpin = false;
+                    this.canSpin = true;
                 }
             });
         }
